@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: strongermonkey
       POSTGRES_DB: filmreviewer_db
     ports:
-      - "5433:5433"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -16,10 +16,11 @@ services:
     build: .
     container_name: desafio-django-container
     restart: always
-    depends_on:
-      - db
     environment:
-      DATABASE_URL: "postgresql://appuser:strongermonkey@db:5433/filmreviewer_db"
+      # DATABASE_URL: "postgresql://appuser:strongermonkey@db:5432/filmreviewer_db"
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: strongermonkey
+      POSTGRES_DB: filmreviewer_db
     ports:
       - "8000:8000"
     volumes:
