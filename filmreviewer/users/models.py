@@ -17,7 +17,9 @@ class Reviews(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
     review = models.TextField(default='None',max_length=999)
     rate = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(10)])
-    movie = models.CharField(default='Unknown', max_length=100)
+    movie_title = models.CharField(default='Unknown', max_length=100)
+    movie_synopsis = models.CharField(default='None')
+    movie_director = models.CharField(default='Unknown')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
