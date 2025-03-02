@@ -10,6 +10,6 @@ class UsersSerializer(serializers.ModelSerializer):
 class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reviews
-        fields = '__all__'
+        fields = ['user', 'rate', 'review', 'created_at']
 
 
