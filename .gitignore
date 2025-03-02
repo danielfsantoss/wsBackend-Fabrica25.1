@@ -21,7 +21,7 @@ sdist/
 var/
 wheels/
 share/python-wheels/
-filmreviews/filmreviews/users/migrations/
+filmreviewer/filmreviewer/users/migrations/
 *.egg-info/
 .installed.cfg
 *.egg
